@@ -15,7 +15,7 @@
                 <ul class="nav navbar-nav">
                 		<?php 
                 		  // This php code in here will generate the nav bar
-                		  $navigation = new Database_Connection($hostname, $username, $userpass, $tablename);
+                		  $navigation = new Database_Connection(hostname, username, userpass, tablename);
                 		  $sqlCmd = "SELECT * FROM Category";
                 		  $navigationData = $navigation->getData($sqlCmd);
                 		  $counter = 0;

@@ -24,6 +24,12 @@ class Database_Connection {
         }
     }
     
+    public function database_shield($user_string){
+        $databaseConn = self::establishConnection();
+        $user_string = mysqli_real_escape_string($databaseConn, $user_string);
+        return $user_string;
+    }
+    
     public function closeConnection(){
         mysqli_close(self::$connection);
     }

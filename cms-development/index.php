@@ -1,54 +1,51 @@
 <!-- Require the function of the web service -->
-<?php 
-    require 'includes/database_connection/database_connection.php';
-    // Information of database connection
-    $hostname = 'localhost';
-    $username = 'root';
-    $userpass = '';
-    $tablename = 'cms';
+<?php
+require 'includes/database_connection/database_connection.php';
+// Information of database connection
+require 'php_server_information/sql_server_info.php';
 ?>
 
 <!-- Header -->
-<?php 
-    require 'includes/resusable_html/header.php';
+<?php
+require 'includes/resusable_html/header.php';
 ?>
 
 <!-- Navigation -->
-<?php 
-    require 'includes/resusable_html/navigation.php';
+<?php
+require 'includes/resusable_html/navigation.php';
 ?>
-    
-    <!-- Page Content -->
-    <div class="container">
 
-        <div class="row">
+<!-- Page Content -->
+<div class="container">
 
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-            
-                <!-- Post -->
-                <?php 
-                    require 'includes/resusable_html/post.php';
-                ?>
+    <div class="row">
 
-                <!-- Pager -->
-                <?php 
-                    require 'includes/resusable_html/pager.php';
-                ?>
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
 
-            </div>
+<!--             Post -->
+            <?php
+            require 'includes/resusable_html/post.php';
+            ?>
 
-            <!-- Blog Sidebar Widgets Column -->
-            <?php 
-                require 'includes/resusable_html/sidebar.php';
+            <!-- Pager -->
+            <?php
+            require 'includes/resusable_html/pager.php';
             ?>
 
         </div>
-        <!-- /.row -->
 
-        <hr>
+        <!-- Blog Sidebar Widgets Column -->
+        <?php
+        require 'includes/resusable_html/sidebar.php';
+        ?>
 
-<!-- Footer -->
-<?php 
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <?php
     require 'includes/resusable_html/footer.php';
-?>
+    ?>

@@ -1,6 +1,6 @@
 <?php 
     // Extract all the data from the database of post
-    $postConnection = new Database_Connection($hostname, $username, $userpass, $tablename);
+    $postConnection = new Database_Connection(hostname, username, userpass, tablename);
     $sqlCmd = "SELECT * FROM Post";
     $postData = $postConnection->getData($sqlCmd);
     
@@ -30,7 +30,7 @@
 
 <hr>
 
-<img class="img-responsive" src="https://www.intofilm.org/intofilm-production/scaledcropped/970x546https%3A/s3-eu-west-1.amazonaws.com/images.cdn.filmclub.org/film__2838-howl-s-moving-castle--hi_res-90ac09c2.jpg/film__2838-howl-s-moving-castle--hi_res-90ac09c2.jpg" alt="">
+<img class="img-responsive" src="images/<?php echo $post_image?>" alt="">
 
 <hr>
 
