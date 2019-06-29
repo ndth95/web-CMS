@@ -17,11 +17,10 @@
                 		  // This php code in here will generate the nav bar
                 		  $navigation = new Database_Connection($hostname, $username, $userpass, $tablename);
                 		  $sqlCmd = "SELECT * FROM Category";
-                		  $sqlKeyword = "Cat_Title";
-                		  $navigationData = $navigation->getData($sqlCmd, $sqlKeyword);
+                		  $navigationData = $navigation->getData($sqlCmd);
                 		  $counter = 0;
                 		  for ($counter; $counter < count($navigationData); ++$counter){
-                		      echo "<li><a href='#'>{$navigationData[$counter]}</a></li>";
+                		      echo "<li><a href='#'>{$navigationData[$counter]['Cat_Title']}</a></li>";
                 		  }
                 		?>
                 

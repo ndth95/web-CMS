@@ -29,7 +29,7 @@ class Database_Connection {
     }
     
     // The input of the command in this function must be a sql statement
-    public function getData($sqlCmd, $sqlKeyword){
+    public function getData($sqlCmd){
         $tempConnection = self::establishConnection();
         $sqlCmd = mysqli_real_escape_string($tempConnection, $sqlCmd);
         $queryStatus = mysqli_query($tempConnection, $sqlCmd);
@@ -40,7 +40,7 @@ class Database_Connection {
         } else {
             $datalist = array();
             while ($row = mysqli_fetch_assoc($queryStatus)){
-               $datalist[] = $row[$sqlKeyword];
+               $datalist[] = $row;
             }
             self::closeConnection();
         }
