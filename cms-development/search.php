@@ -3,6 +3,8 @@
 require 'includes/database_connection/database_connection.php';
 // Information of database connection
 require 'php_server_information/sql_server_info.php';
+// Database class
+require 'includes/database_connection/Database.php';
 ?>
 
 <!-- Header -->

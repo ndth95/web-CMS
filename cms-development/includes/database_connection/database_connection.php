@@ -44,13 +44,28 @@ class Database_Connection {
             self::closeConnection();
             return -1;
         } else {
-            $datalist = array();
-            while ($row = mysqli_fetch_assoc($queryStatus)){
-               $datalist[] = $row;
+            $counter = mysqli_num_rows($queryStatus);
+            if ($counter > 0){
+                $datalist = array();
+                while ($row = mysqli_fetch_assoc($queryStatus)){
+                    $datalist[] = $row;
+                }
+            } else {
+                return -1;
             }
-            self::closeConnection();
         }
         return $datalist;
+    }
+
+    // Query Data
+    public function queryDatabase($sqlCommand){
+        $connection = self::establishConnection();
+        $queryStatus = mysqli_query($connection, $sqlCommand);
+        if (!$queryStatus){
+            return $queryStatus;
+        } else {
+            return -1;
+        }
     }
 }
 ?>

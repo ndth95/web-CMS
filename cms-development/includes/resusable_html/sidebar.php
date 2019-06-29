@@ -21,31 +21,23 @@
         <h4>Blog Categories</h4>
         <div class="row">
             <div class="col-lg-6">
-                <ul class="list-unstyled">
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                </ul>
+
+                <?php
+                $queryCommand = "SELECT * FROM Category";
+                $conn_instance = new Database();
+                $cat_data = $conn_instance->getData($queryCommand);
+                if ($cat_data != -1) {
+                    $counter = 0;
+                    for ($counter; $counter < sizeof($cat_data); ++$counter) {
+                        $Cat_Title = $cat_data[$counter]['Cat_Title']; ?>
+
+                        <li><a href=""><?php echo $Cat_Title ?></a></li>
+
+                        <?php
+                    }
+                }
+                ?>
             </div>
-            <!-- /.col-lg-6 -->
-            <div class="col-lg-6">
-                <ul class="list-unstyled">
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                    <li><a href="#">Category Name</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.col-lg-6 -->
         </div>
         <!-- /.row -->
     </div>
