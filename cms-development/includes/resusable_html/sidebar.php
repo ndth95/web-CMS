@@ -23,7 +23,7 @@
             <div class="col-lg-6">
 
                 <?php
-                $queryCommand = "SELECT * FROM Category";
+                $queryCommand = "SELECT * FROM Category LIMIT 4";
                 $conn_instance = new Database();
                 $cat_data = $conn_instance->getData($queryCommand);
                 if ($cat_data != -1) {

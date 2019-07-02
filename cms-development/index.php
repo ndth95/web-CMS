@@ -1,6 +1,5 @@
 <!-- Require the function of the web service -->
 <?php
-require 'includes/database_connection/database_connection.php';
 // Information of database connection
 require 'php_server_information/sql_server_info.php';
 require 'includes/database_connection/Database.php';

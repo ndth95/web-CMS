@@ -1,6 +1,6 @@
 <?php 
     // Extract all the data from the database of post
-    $postConnection = new Database_Connection(hostname, username, userpass, tablename);
+    $postConnection = new Database();
     $sqlCmd = "SELECT * FROM Post";
     $postData = $postConnection->getData($sqlCmd);
     

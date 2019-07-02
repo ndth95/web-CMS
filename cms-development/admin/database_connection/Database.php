@@ -54,6 +54,21 @@ class Database
         $this->killConnection($connection);
         return $datalist;
     }
+
+    function category_is_exists($item){
+        $item = strtolower($item);
+        $sql_command = "SELECT * FROM Category";
+        $cms_data = self::getData($sql_command);
+        $counter = 0;
+        for ($counter; $counter < sizeof($cms_data); ++$counter){
+            $cat_title = $cms_data[$counter]['Cat_Title'];
+            $cat_title = strtolower($cat_title);
+            if ($cat_title == $item){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 ?>

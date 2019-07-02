@@ -1,6 +1,5 @@
 <!-- Require the function of the web service -->
 <?php
-require 'includes/database_connection/database_connection.php';
 // Information of database connection
 require 'php_server_information/sql_server_info.php';
 // Database class
@@ -30,8 +29,8 @@ require 'includes/resusable_html/navigation.php';
             // Search engine
             if (isset($_POST['search_submit'])) {
                 $searching_item = $_POST['search'];
-                $connetion = new Database_Connection(hostname, username, userpass, tablename);
-                $databaseConn = $connetion->establishConnection();
+                $connetion = new Database();
+                $databaseConn = $connetion->makeConnection();
                 $searching_item = mysqli_real_escape_string($databaseConn, $searching_item);
                 $sqlCommand = "SELECT * FROM Post WHERE Post_Tags LIKE '%$searching_item%'";
                 $queryStatus = mysqli_query($databaseConn, $sqlCommand);
