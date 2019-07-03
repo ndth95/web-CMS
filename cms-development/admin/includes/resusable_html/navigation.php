@@ -86,10 +86,10 @@
                             class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="posts_dropdown" class="collapse">
                     <li>
-                        <a href="#">View all posts</a>
+                        <a href="posts.php">View all posts</a>
                     </li>
                     <li>
-                        <a href="#">Add posts</a>
+                        <a href="posts.php?post_nav=make_new_post">Add posts</a>
                     </li>
                 </ul>
             </li>
